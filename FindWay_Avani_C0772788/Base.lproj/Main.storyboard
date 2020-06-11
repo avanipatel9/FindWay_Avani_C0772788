@@ -16,22 +16,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-D7-c3w">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D1H-Xy-lxu"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxM-gw-Nll">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qzY-C8-vn0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tic-G4-GQp">
+                                <rect key="frame" x="187" y="408.5" width="40" height="39"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3ka-QL-DDu"/>
+                                    <constraint firstAttribute="width" constant="40" id="Ang-6C-f4u"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="tic-G4-GQp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="2J5-DB-YE5"/>
                             <constraint firstAttribute="trailing" secondItem="1mm-D7-c3w" secondAttribute="trailing" id="8bR-hL-sac"/>
-                            <constraint firstAttribute="bottom" secondItem="1mm-D7-c3w" secondAttribute="bottom" id="J1e-V9-Yow"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LxM-gw-Nll" secondAttribute="bottom" id="A3J-RR-v2u"/>
+                            <constraint firstItem="LxM-gw-Nll" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Chy-MY-wbf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1mm-D7-c3w" secondAttribute="bottom" id="Pc4-au-Chi"/>
                             <constraint firstItem="1mm-D7-c3w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RfC-gh-PsA"/>
+                            <constraint firstItem="tic-G4-GQp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hVM-DH-ONk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LxM-gw-Nll" secondAttribute="trailing" constant="-20" id="irC-PV-eyZ"/>
                             <constraint firstItem="1mm-D7-c3w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p0B-21-T1C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="LxM-gw-Nll" id="sYf-cN-3xe"/>
                         <outlet property="mapView" destination="1mm-D7-c3w" id="foE-p8-t0Y"/>
                     </connections>
                 </viewController>
@@ -40,4 +64,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
