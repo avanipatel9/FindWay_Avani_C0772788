@@ -15,47 +15,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-D7-c3w">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-D7-c3w">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D1H-Xy-lxu"/>
                                 </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxM-gw-Nll">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnd-Xb-Oc2">
+                                <rect key="frame" x="324" y="702.5" width="60" height="59"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qzY-C8-vn0"/>
+                                    <constraint firstAttribute="height" constant="60" id="2l6-m0-pdc"/>
+                                    <constraint firstAttribute="width" constant="60" id="sFu-Dj-Hck"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tic-G4-GQp">
-                                <rect key="frame" x="187" y="408.5" width="40" height="39"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="location.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="drawLocationBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eit-ZZ-L39"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZVC-yc-jHB">
+                                <rect key="frame" x="139" y="792" width="136" height="51"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3ka-QL-DDu"/>
-                                    <constraint firstAttribute="width" constant="40" id="Ang-6C-f4u"/>
+                                    <constraint firstAttribute="height" constant="50" id="gj3-iM-UdX"/>
                                 </constraints>
-                            </imageView>
+                                <segments>
+                                    <segment title="Driving"/>
+                                    <segment title="Walking"/>
+                                </segments>
+                                <connections>
+                                    <action selector="travelModeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="6uL-cx-jrP"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oIt-CX-fDk">
+                                <rect key="frame" x="340" y="774" width="30" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-gk-5Dw">
+                                        <rect key="frame" x="0.0" y="1" width="30" height="27.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="HEE-1w-OKS"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="plus.rectangle" catalog="system">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="zoomInBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayV-tn-9Dt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icR-C5-eEd">
+                                        <rect key="frame" x="0.0" y="46" width="30" height="27.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3Qt-Nb-0Iz"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="minus.rectangle" catalog="system"/>
+                                        <connections>
+                                            <action selector="zoomOutBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ky-rK-rq8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="D43-B2-l6d"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="tic-G4-GQp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="2J5-DB-YE5"/>
-                            <constraint firstAttribute="trailing" secondItem="1mm-D7-c3w" secondAttribute="trailing" id="8bR-hL-sac"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LxM-gw-Nll" secondAttribute="bottom" id="A3J-RR-v2u"/>
-                            <constraint firstItem="LxM-gw-Nll" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Chy-MY-wbf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1mm-D7-c3w" secondAttribute="bottom" id="Pc4-au-Chi"/>
-                            <constraint firstItem="1mm-D7-c3w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RfC-gh-PsA"/>
-                            <constraint firstItem="tic-G4-GQp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hVM-DH-ONk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LxM-gw-Nll" secondAttribute="trailing" constant="-20" id="irC-PV-eyZ"/>
-                            <constraint firstItem="1mm-D7-c3w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p0B-21-T1C"/>
+                            <constraint firstItem="1mm-D7-c3w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="30Q-lJ-MnD"/>
+                            <constraint firstItem="1mm-D7-c3w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8gN-vK-fJw"/>
+                            <constraint firstItem="1mm-D7-c3w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HGs-H2-fNR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnd-Xb-Oc2" secondAttribute="trailing" constant="30" id="SOV-VX-Ol9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oIt-CX-fDk" secondAttribute="trailing" constant="44" id="Z9d-wH-Vcn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tnd-Xb-Oc2" secondAttribute="bottom" constant="100" id="ZMM-jS-5qt"/>
+                            <constraint firstItem="ZVC-yc-jHB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zir-0z-UTq"/>
+                            <constraint firstItem="oIt-CX-fDk" firstAttribute="leading" secondItem="ZVC-yc-jHB" secondAttribute="trailing" constant="65" id="bhi-ek-SCn"/>
+                            <constraint firstAttribute="trailing" secondItem="1mm-D7-c3w" secondAttribute="trailing" id="cuB-h5-5QO"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZVC-yc-jHB" secondAttribute="bottom" constant="20" id="oxS-tF-OOU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oIt-CX-fDk" secondAttribute="bottom" constant="13" id="yUC-Um-Pjj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="LxM-gw-Nll" id="sYf-cN-3xe"/>
                         <outlet property="mapView" destination="1mm-D7-c3w" id="foE-p8-t0Y"/>
                     </connections>
                 </viewController>
@@ -65,6 +106,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="location.circle" catalog="system" width="128" height="121"/>
+        <image name="minus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="plus.rectangle" catalog="system" width="128" height="93"/>
     </resources>
 </document>
