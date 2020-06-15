@@ -60,7 +60,9 @@ class ViewController: UIViewController {
         
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
-            startTrackingUserLocation()
+//            startTrackingUserLocation()
+            centerViewOnUserLocation()
+            locationManager.startUpdatingLocation()
         case .denied:
             //Show alert instructing them how to turn on permissions
             break
