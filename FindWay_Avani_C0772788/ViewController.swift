@@ -13,7 +13,8 @@ import CoreLocation
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-//    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var travelModeSegment: UISegmentedControl!
+    @IBOutlet weak var addressLabel: UILabel!
     
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000
@@ -228,7 +229,7 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
             let rendrer = MKPolylineRenderer(overlay: overlay)
-            if(travelMode == "D")
+            if travelModeSegment.selectedSegmentIndex == 0
             {
                 rendrer.strokeColor = UIColor.red
             }
@@ -270,10 +271,9 @@ extension ViewController: MKMapViewDelegate {
 //        let streetNumber = placemark.subThoroughfare ?? ""
 //        let streetName = placemark.thoroughfare ?? ""
 //        let subLocality = placemark.subLocality ?? ""
-//        let postalCode = placemark.postalCode ?? ""
 //        
 //        DispatchQueue.main.async {
-//            self.addressLabel.text = "\(streetNumber) \(streetName) \(subLocality) \(postalCode)"
+//            self.addressLabel.text = "\(streetNumber) \(streetName) \(subLocality)"
 //        }
 //    }
 //    }

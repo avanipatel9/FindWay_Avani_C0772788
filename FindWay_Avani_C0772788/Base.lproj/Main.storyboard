@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mm-D7-c3w">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="882"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D1H-Xy-lxu"/>
                                 </connections>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZVC-yc-jHB">
-                                <rect key="frame" x="139" y="792" width="136" height="51"/>
+                                <rect key="frame" x="139" y="762" width="136" height="51"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gj3-iM-UdX"/>
@@ -79,11 +79,22 @@
                                     <constraint firstAttribute="width" constant="30" id="D43-B2-l6d"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4r-ru-Hva">
+                                <rect key="frame" x="207" y="842" width="0.0" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="2cc-lv-cgl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1mm-D7-c3w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="30Q-lJ-MnD"/>
-                            <constraint firstItem="1mm-D7-c3w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8gN-vK-fJw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZVC-yc-jHB" secondAttribute="bottom" constant="50" id="3cv-mn-r3Z"/>
+                            <constraint firstItem="1mm-D7-c3w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="8gN-vK-fJw"/>
                             <constraint firstItem="1mm-D7-c3w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HGs-H2-fNR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnd-Xb-Oc2" secondAttribute="trailing" constant="30" id="SOV-VX-Ol9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oIt-CX-fDk" secondAttribute="trailing" constant="44" id="Z9d-wH-Vcn"/>
@@ -91,13 +102,16 @@
                             <constraint firstItem="ZVC-yc-jHB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zir-0z-UTq"/>
                             <constraint firstItem="oIt-CX-fDk" firstAttribute="leading" secondItem="ZVC-yc-jHB" secondAttribute="trailing" constant="65" id="bhi-ek-SCn"/>
                             <constraint firstAttribute="trailing" secondItem="1mm-D7-c3w" secondAttribute="trailing" id="cuB-h5-5QO"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZVC-yc-jHB" secondAttribute="bottom" constant="20" id="oxS-tF-OOU"/>
+                            <constraint firstItem="z4r-ru-Hva" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q3t-A5-zKA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z4r-ru-Hva" secondAttribute="bottom" id="sZ3-Pi-SLI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oIt-CX-fDk" secondAttribute="bottom" constant="13" id="yUC-Um-Pjj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="z4r-ru-Hva" id="nmc-HC-0W7"/>
                         <outlet property="mapView" destination="1mm-D7-c3w" id="foE-p8-t0Y"/>
+                        <outlet property="travelModeSegment" destination="ZVC-yc-jHB" id="GmE-Ob-KOh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
